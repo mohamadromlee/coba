@@ -1,0 +1,9 @@
+    version: '3.8'
+    services:
+      web:
+        build: . # Build image dari Dockerfile di direktori saat ini
+        ports:
+          - "8000:80" # Map port 80 di container ke port 8000 di host
+        volumes:
+          - .:/usr/share/nginx/html # Mount direktori proyek ke dalam container (untuk hot reloading)
+    
