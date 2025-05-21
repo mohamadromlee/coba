@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keuangan PRM Bagong</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles/dashboard.css"> 
+    <link rel="stylesheet" href="styles/form.css">   
+    <link rel="stylesheet" href="styles/dashboard.css"> 
+</head>
+<body class="bg-gray-100">
+    <div class="container mx-auto p-6 flex flex-col min-h-screen">
+        <aside class="sidebar bg-blue-100 text-gray-800 w-64 p-4 rounded-md shadow-md mb-8">
+            <div class="logo mb-6 text-center">
+                <h2 class="text-blue-700 text-2xl font-semibold">PRM Bagong</h2>
+            </div>
+            <nav class="navigation">
+                <ul class="list-none p-0">
+                    <li class="mb-2">
+                        <a href="dashboard.html" class="active block px-4 py-2 rounded-md hover:bg-blue-200 transition duration-300">Dashboard</a>
+                    </li>
+                    <li class="mb-2 dropdown">
+                        <a href="javascript:void(0);" class="block px-4 py-2 rounded-md hover:bg-blue-200 transition duration-300">Dana Masuk</a>
+                        <ul class="dropdown-content pl-4 hidden">
+                            <li><a href="input_dana_masuk.html" class="block px-4 py-2 rounded-md hover:bg-blue-200 transition duration-300">Input Dana Masuk</a></li>
+                        </ul>
+                    </li>
+                    <li class="mb-2 dropdown">
+                        <a href="javascript:void(0);" class="block px-4 py-2 rounded-md hover:bg-blue-200 transition duration-300">Dana Keluar</a>
+                        <ul class="dropdown-content pl-4 hidden">
+                            <li><a href="input_dana_keluar.html" class="block px-4 py-2 rounded-md hover:bg-blue-200 transition duration-300">Input Dana Keluar</a></li>
+                        </ul>
+                    </li>
+                    <li class="mb-2">
+                        <a href="laporan_saldo.html" class="block px-4 py-2 rounded-md hover:bg-blue-200 transition duration-300">Saldo</a>
+                    </li>
+                    <li class="mb-2">
+                        <a href="laporan_keuangan.html" class="block px-4 py-2 rounded-md hover:bg-blue-200 transition duration-300">Laporan Keuangan</a>
+                    </li>
+                    <li class="mb-2">
+                        <a href="pengaturan.html" class="block px-4 py-2 rounded-md hover:bg-blue-200 transition duration-300">Pengaturan</a>
+                    </li>
+                    <li class="mb-2">
+                        <a href="logout.php" class="block px-4 py-2 rounded-md hover:bg-blue-200 transition duration-300">Logout</a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+        <div class="main-content flex-1 p-8 bg-white rounded-md shadow-md">
+            <header class="flex justify-between items-center mb-6">
+                <h1 class="text-3xl font-bold text-gray-800">Dashboard</h1>
+                <div class="user-info text-gray-600">
+                    <span>Selamat datang, [Nama Pengguna]</span>
+                </div>
+            </header>
+            <main>
+                <div class="summary-cards grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                    <div class="card bg-blue-50 p-6 rounded-lg shadow-sm text-center">
+                        <h3 class="text-blue-700 text-lg font-semibold mb-2">Saldo Saat Ini</h3>
+                        <p class="saldo text-blue-900 text-3xl font-bold" id="saldoSaatIni">Rp 0</p>
+                    </div>
+                    <div class="card bg-green-50 p-6 rounded-lg shadow-sm text-center">
+                        <h3 class="text-green-700 text-lg font-semibold mb-2">Total Dana Masuk</h3>
+                        <p class="masuk text-green-900 text-3xl font-bold" id="totalDanaMasuk">Rp 0</p>
+                    </div>
+                    <div class="card bg-red-50 p-6 rounded-lg shadow-sm text-center">
+                        <h3 class="text-red-700 text-lg font-semibold mb-2">Total Dana Keluar</h3>
+                        <p class="keluar text-red-900 text-3xl font-bold" id="totalDanaKeluar">Rp 0</p>
+                    </div>
+                </div>
+
+                <div class="recent-transactions bg-gray-50 p-6 rounded-lg shadow-sm">
+                    <h2 class="text-2xl font-bold text-gray-800 mb-4">Transaksi Terakhir</h2>
+                    <div class="overflow-x-auto">
+                        <table class="min-w-full bg-white rounded-lg shadow-sm">
+                            <thead>
+                                <tr class="bg-gray-200 text-gray-700 uppercase text-sm leading-normal">
+                                    <th class="py-3 px-6 text-left">Tanggal</th>
+                                    <th class="py-3 px-6 text-left">Jenis</th>
+                                    <th class="py-3 px-6 text-left">Deskripsi</th>
+                                    <th class="py-3 px-6 text-right">Jumlah</th>
+                                </tr>
+                            </thead>
+                            <tbody class="text-gray-600 text-sm font-light" id="daftarTransaksi">
+                                <tr>
+                                    <td colspan="4" class="py-3 px-6 text-center text-gray-500">Belum ada transaksi.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+    <script src="assets/dashboard.js"></script> </body>
+</html>
